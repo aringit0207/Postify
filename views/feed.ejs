@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeds</title>
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+</head>
+
+<body>
+  <div class="container">
+    <% if (posts && posts.length > 0) { %>
+      <% posts.forEach(function(post) { %>
+        <div class="box">
+          <a href="/images/uploads/<%= post.image %>">
+            <img src="/images/uploads/<%= post.image %>" alt="Post image">
+          </a>
+          <div class="caption"><%= post.imageText %></div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No posts available.</p>
+    <% } %>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="app.js"></script>
+  <script src="/javascripts/feed.js"></script>
+</body>
+
+</html>
